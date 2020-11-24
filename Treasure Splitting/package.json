@@ -1,0 +1,17 @@
+{
+  "name": "treasure-splitting",
+  "version": "1.0.0",
+  "description": "",
+  "main": "treasure.js",
+  "dependencies": {
+    "esm": "^3.2.25",
+    "js-combinatorics": "^1.4.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node treasure.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
