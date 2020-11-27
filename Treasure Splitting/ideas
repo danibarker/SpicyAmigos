@@ -1,0 +1,24 @@
+You and three friends are on a treasure hunt, you find a treasure and need to figure out how to split it evenly.  The pieces of treasure have different values, and each of you are able to carry the same number of pieces of treasure each.  Create an algorithm that will split the treasure as evenly as possible between a given number of people.
+
+Constraints:
+-There will be a maximum of 20 pieces of treasure
+-There will always be a multiple of 4 pieces of treasure
+-The solution will always have a maximum of a difference of 5 in the value of treasure each person gets i.e. nobody's treasure will be valued 6 higher than anyone else's
+
+eg. input:
+
+treasure_values = [1,15,23,19,36,99,44,55,23,45,11,76,25,10,9,88]
+
+best possible split (a max difference of 1):
+1: 1, 23, 44, 76 = 144
+2: 15, 19, 23, 88 = 145
+3: 36, 55, 45, 9 = 145
+4: 99, 11, 25, 10 = 145
+
+output = [[1, 23, 44, 76], [15, 19, 23, 88], [36, 55, 45, 9], [99, 11, 25, 10]]
+
+hint: You might want to use a package to generate combinations, I'm using a package js-combinatorics.js, specifically the function Combinatorics.Combination, but there are likely other ways of attacking this problem.
+
+generate all possible combinations that a person could have.
+
+
