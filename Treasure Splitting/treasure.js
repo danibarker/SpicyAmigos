@@ -4,14 +4,14 @@ var Combo = require("js-combinatorics");
 let valueList = []
 
 // random treasure values seed
-for (let n = 0; n < 20; n++) {
+for (let n = 0; n < 8; n++) {
     valueList.push(Math.floor(Math.random() * 300))
 }
 distribution_generator(valueList)
 
 function distribution_generator(values) {
-    min_value = sum(values) / 4 - 1
-    max_value = sum(values) / 4 + 1
+    min_value = sum(values) / 4 - 300
+    max_value = sum(values) / 4 + 300
     let distributions = []
     let treasureIndexes = []
     for (let i = 1; i <= values.length; i++) {
@@ -31,12 +31,16 @@ function distribution_generator(values) {
             possible_distributions.push(distribution)
         }
         //filter out all distributions that fall outside the constraints
+
+        console.log('possible combos', possible_distributions.length)
         possible_distributions = possible_distributions.filter((distribution) => distribution_in_range(distribution, min_value, max_value))
-            
+        console.log('combos that fit the constraint', possible_distributions.length)    
             for (let distribution of possible_distributions) {
 
                 // looping through the distributions of the lowest remaining treasure (by index)
                 if (distribution[0] == min(treasure)) {
+                    console.log(distribution)
+                    console.log('depth',depth)
                     // filter the treasure out from future choices
                     const leftover = treasure.filter((choice) => !distribution.includes(choice))
                     // if there is more treasure left to distribute than each person gets
@@ -81,7 +85,7 @@ function distribution_generator(values) {
    
 
    
-    
+   // treasureIndexes =  [1,2,3,4,5,6,7,8,9,10, etc]
 
     generate_possible_distributions(treasureIndexes)
 
