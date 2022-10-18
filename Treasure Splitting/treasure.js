@@ -1,4 +1,4 @@
-require = require("esm")(module);
+//require = require("esm")(module);
 var Combo = require("js-combinatorics");
 
 let valueList = []
